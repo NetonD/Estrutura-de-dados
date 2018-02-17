@@ -2,7 +2,7 @@
 
 using namespace std;
 class Node{
-	public: //DECLARAÇÃO DE TODOS ATRIBUTOS E METODOS PULBICOS
+	public: //DECLARAÃ‡ÃƒO DE TODOS ATRIBUTOS E METODOS PULBICOS
 		int valor;  //VALOR ENCAPSULADO NO 'NO'
 		Node* next; //PONTEIRO QUE APONTA PARA O NO SEGUINTE
 		
@@ -10,9 +10,9 @@ class Node{
 		
 		Node(int entrada){ //CONSTRUTOR DA CLASSE 'Node'
 			valor = entrada; //INSERI NO ATRIBUTO 'valor' A 'entrada'
-			next = NULL; //PARA NÃO TER QUE SEMPRE DEPOIS DE CRIAR UM NO APONTAR PARA NULO JA FAZ LOGO O 'next' SER NULO AQUI
+			next = NULL; //PARA NÃƒO TER QUE SEMPRE DEPOIS DE CRIAR UM NO APONTAR PARA NULO JA FAZ LOGO O 'next' SER NULO AQUI
 		}
-		Node(){ //APENAS EXEMPLO DE COMO SERIA O POLIMORFISMO, ESSE CONSTRUTOR É INULTIL
+		Node(){ //APENAS EXEMPLO DE COMO SERIA O POLIMORFISMO, ESSE CONSTRUTOR Ã‰ INULTIL
 			valor = 0;
 		}
 };
@@ -22,7 +22,7 @@ class Lista{
 		Node* tail; //O PONTEIRO QUE FICA SEMPRE NO FINAL DA LISTA
 		
 		Lista(){
-			head = NULL; //COMO A LISTA ESTÁ VAZIA HEAD E TAIL APONTAM PARA 'NULL'
+			head = NULL; //COMO A LISTA ESTÃ VAZIA HEAD E TAIL APONTAM PARA 'NULL'
 			tail = NULL;
 		}
 };
@@ -33,31 +33,31 @@ void inserir_na_frente(Lista* l, int valor_do_no){
 	Node* novo = new Node(valor_do_no); //PARA INSTACIAR UM OBJETO EU USO UM PONTEIRO QUE VAI GUARDAR A REFERENCIA DESSE OBJETO(BASICAMENTE COMO NO JAVA)
 
 	if(!l->head){ //USANDO A REFERENCIA DA LISTA 'l' PASSADA POR REFERENCIA NOS PARAMETOS UTILIZA-SE '->' PARA ACESSAR 
-				// O CAMPO DESEJADO, NESSE CASO O HEAD. ENTÃO VERIFICAMOS SE O HEAD ESTÁ VAZIO
+				// O CAMPO DESEJADO, NESSE CASO O HEAD. ENTÃƒO VERIFICAMOS SE O HEAD ESTÃ VAZIO
 				
-		l->head = novo; //CASO A LISTA ESTEJA VAZIA ESSE SERÁ O PRIMEIRO ELEMENTO, ENTÃO FAÇO 'head' E 'tail' APONTAR PARA ELE
+		l->head = novo; //CASO A LISTA ESTEJA VAZIA ESSE SERÃ O PRIMEIRO ELEMENTO, ENTÃƒO FAÃ‡O 'head' E 'tail' APONTAR PARA ELE
 		l->tail = novo; 
 	}else{
-		novo->next = l->head; //CASO MINHA LISTA NÃO ESTEJA VAZIA FAÇO O 'next' DO NOVO ELEMENTO APONTAR PARA O HEAD
-		l->head = novo;        //E DEPOIS FAÇO O 'head' APONTAR PARA ELE FAZENDO DELE O PRIMEIRO ELEMENTO
+		novo->next = l->head; //CASO MINHA LISTA NÃƒO ESTEJA VAZIA FAÃ‡O O 'next' DO NOVO ELEMENTO APONTAR PARA O HEAD
+		l->head = novo;        //E DEPOIS FAÃ‡O O 'head' APONTAR PARA ELE FAZENDO DELE O PRIMEIRO ELEMENTO
 	}
 }
 
 //MESMO ESQUEMA PARA INSERIR ULTIMO
 void inserir_atras(Lista* l,int valor_do_no){
 	Node* novo = new Node(valor_do_no);
-	if(!l->head){ //VERIFICA SE ESTÁ VAZIA
+	if(!l->head){ //VERIFICA SE ESTÃ VAZIA
 		l->head = novo; //SE TIVER FAZ 'head' e 'tail' APONTAR PRA ELE
 		l->tail = novo;
 	}else{
-		l->tail->next = novo; //AQUI PODE SER MEIO CONFUSO; 'l' É UMA LISTA, NESSA LISTA(QUE É UM PONTEIRO PARA OBJETO) EU TENHO 2 ATRIBUTOS 'head' e 'tail'
-		l->tail = novo;		  //MAS ELES SÃO PONTEIROS PARA O TIPO 'Node' PORQUE TEM QUE APONTAR PARA OS ELEMENTOS DO INICIO E DO FINAL DA LISTA
-							  //ENTÃO PARA ACESSAR O CAMPO DE 'valor' OU O CAMPO 'next' TEM QUE USAR DUAS '->' A PRIMEIRA DA LISTA PARA ACESSAR SEU 'tail'
+		l->tail->next = novo; //AQUI PODE SER MEIO CONFUSO; 'l' Ã‰ UMA LISTA, NESSA LISTA(QUE Ã‰ UM PONTEIRO PARA OBJETO) EU TENHO 2 ATRIBUTOS 'head' e 'tail'
+		l->tail = novo;		  //MAS ELES SÃƒO PONTEIROS PARA O TIPO 'Node' PORQUE TEM QUE APONTAR PARA OS ELEMENTOS DO INICIO E DO FINAL DA LISTA
+							  //ENTÃƒO PARA ACESSAR O CAMPO DE 'valor' OU O CAMPO 'next' TEM QUE USAR DUAS '->' A PRIMEIRA DA LISTA PARA ACESSAR SEU 'tail'
 							  //E A SEGUNDO DO TAIL PARA ACESSAR O SEU 'next', E DAI VAMOS FAZER O 'next' DO ULTIMO ELEMENTO APONTO PARA O NOVO
 	}	
 }
 
-//COMO SÓ VAI PERCORRER A LISTA SÓ PRECISA PASSAR ELA NO PARAMENTRO
+//COMO SÃ“ VAI PERCORRER A LISTA SÃ“ PRECISA PASSAR ELA NO PARAMENTRO
 void exibir_elementos(Lista* l){
 	Node* auxiliar = l->head; //O PONTEIRO AUXILIAR PARA PERCORRER A LISTA SEM TIRAR O 'head' DO LUGAR
 	cout << "Lista: " << endl;
@@ -68,38 +68,38 @@ void exibir_elementos(Lista* l){
 	cout << "Fim." << endl;
 }
 
-//MESMO ESQUEMA PADRÃO, SÓ QUE AGORA O VALOR VAI SER O ELEMENTO QUE A GENTE QUER
+//MESMO ESQUEMA PADRÃƒO, SÃ“ QUE AGORA O VALOR VAI SER O ELEMENTO QUE A GENTE QUER
 bool buscar_elemento(Lista* l,int procurado){
-	if(!l->head){ //VERIFICO SE A LISTA TA VAZIA PRA NÃO DA PAU NO PROGRAMA
+	if(!l->head){ //VERIFICO SE A LISTA TA VAZIA PRA NÃƒO DA PAU NO PROGRAMA
 		cout << "Lista vazia." << endl;
 		return false;
 	}
 	Node* auxiliar = l->head;
-	while(auxiliar || (auxiliar->valor != procurado) ) auxiliar = auxiliar->next; //LAÇO PARA PERCORRER A LISTA TODA, ELE SÓ PARA EM DUAS CONDIÇÕES:
-	//																			  //CHEGAR NO FIM DA FILA OU O VALOR SER IGUAL. ISSO DIMINUI AS ITERAÇÕES DE IF DENTRO DO WHILE
-	if(auxiliar->valor == procurado){ //VERIFICA SE O MOTIVO DA SAIDO DO LAAÇO WHILE FOI A IGUALDADE ENTRE OS VALORES SE SIM PRINTA E RETORNA TRUE
+	while(auxiliar || (auxiliar->valor != procurado) ) auxiliar = auxiliar->next; //LAÃ‡O PARA PERCORRER A LISTA TODA, ELE SÃ“ PARA EM DUAS CONDIÃ‡Ã•ES:
+	//																			  //CHEGAR NO FIM DA FILA OU O VALOR SER IGUAL. ISSO DIMINUI AS ITERAÃ‡Ã•ES DE IF DENTRO DO WHILE
+	if(auxiliar->valor == procurado){ //VERIFICA SE O MOTIVO DA SAIDO DO LAAÃ‡O WHILE FOI A IGUALDADE ENTRE OS VALORES SE SIM PRINTA E RETORNA TRUE
 		cout << "Elemento encontrado." << endl;
 		return true;
-	}else{ //CASO ELE NÃO SEJA O VALOR PROCURADO RETORNA FALSE
-		cout << "Elemento não encontrado." << endl;
+	}else{ //CASO ELE NÃƒO SEJA O VALOR PROCURADO RETORNA FALSE
+		cout << "Elemento nÃ£o encontrado." << endl;
 		return false;
 	}
 }
 
-//COMO VAI EXCLUIR APENAS O PRIMEIRO NÃO PRECISA DO VALOR APENAS DA LISTA
+//COMO VAI EXCLUIR APENAS O PRIMEIRO NÃƒO PRECISA DO VALOR APENAS DA LISTA
 void excluir_primeiro(Lista* l){
 	if(!l->head){
-		cout << "Lista vazia." << endl; // SE A LISTA TA VAZIA NÃO TEM O QUE EXCLUIR
+		cout << "Lista vazia." << endl; // SE A LISTA TA VAZIA NÃƒO TEM O QUE EXCLUIR
 		return;
 	}else{ //CASO A LISTA TENHA MAIS QUE UM ELEMENTO TEM QUE FAZER O 'head' APONTAR PRO SEU 'next' EXLCUINDO O ELEMENTO DA LISTA
 		l->head = l->head->next;
 	}	
 }
 
-//MESMA COISA DA EXCLUSÃO DO PRIMEIRO ELEMENTO, MAS AGORA TEM QUE PERCORRER A LISTA PRA ACHAR O TAIL
+//MESMA COISA DA EXCLUSÃƒO DO PRIMEIRO ELEMENTO, MAS AGORA TEM QUE PERCORRER A LISTA PRA ACHAR O TAIL
 void excluir_ultimo(Lista* l){
 	if(!l->head){
-		cout << "Lista vazia." << endl; //LISTA VAZIA NÃO EXLCUI ELEMENTO
+		cout << "Lista vazia." << endl; //LISTA VAZIA NÃƒO EXLCUI ELEMENTO
 		return; //PARA SAIR DO METODO
 	}
 	Node* auxiliar = l->head; //PONTEIRO PARA PERCORRER A LISTA
@@ -109,7 +109,7 @@ void excluir_ultimo(Lista* l){
 		cout << "Lista limpa, elemento excluido." << endl;
 	}else{
 		while(auxiliar->next != l->tail) auxiliar = auxiliar->next; //PERCORRE A LISTA ATE CHEGAR NO ELEMENTO ANTERIOR A 'tail'
-		l->tail = auxiliar; //FAZ TAIL APONTAR PARA O ELEMENTO DE TRÁS
+		l->tail = auxiliar; //FAZ TAIL APONTAR PARA O ELEMENTO DE TRÃS
 		l->tail->next = NULL; //FAZENDO O NEXT DE 'tail' SER NULL EXCLUI O ULTIMO ELEMENTO
 		cout << "Elemento excluido." << endl;
 	}
@@ -121,16 +121,27 @@ void excluir_aparicao(Lista* l, int procurado){
 		return;
 	}
 
-	if(!l->head->next && l->head->valor == procurado){
-		l->head =NULL;
-		l->tail =NULL;
-		cout << "Lista limpa, elemento excluido." << endl;
-		return;
-	}else{
-		cout << "Unico elemento não é o procurado"; << endl;
-		return
+	while(l->head->valor == procurado && l->head){
+		l->head = l->head->next;
+	}
+	Node* auxiliar = l->head;
+	while(auxiliar){
+		while(auxiliar->next){
+			if(auxiliar->next->valor == procurado){
+				auxiliar->next = auxiliar->next->next;
+			}
+		}
+		auxiliar = auxiliar->next;
 	}
 }
 int main(){
+	Lista* lis = new Lista();
+	inserir_atras(lis,4);
+	inserir_atras(lis,3);
+	
+	excluir_aparicao(lis,3);
+	exibir_elementos(lis);
+	
+	return 0;
 	
 }
