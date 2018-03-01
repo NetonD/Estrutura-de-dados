@@ -1,3 +1,7 @@
+/* CREATE BY ALMIR NETO
+ * CONTACT ALMIR.NETO03@HOTMAIL.COM
+ * I'D BE GREATEFUL IF YOU LEFT A STAR *-*
+ */
 #include <iostream>
 
 using namespace std;
