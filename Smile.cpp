@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <unistd.h>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -14,14 +15,27 @@ class Smile{
 			}
 			x=2;
 			while(x==2){
-				for(y=2;y<10;y++){
-					if(y<4) matriz[x][y]='o';
-					else if(y>6&y<9) matriz[x][y] = 'o';
+				for(y=1;y<10;y++){
+					if(y<3) matriz[x][y]='o';
+					else if(y>5&y<8) matriz[x][y] = 'o';
 				}
 				x++;
 			}
+			x=6;
+			while(x==6){
+				for(y=1;y<9;y++){
+					matriz[x][y] = 'x';
+				}
+				x++;
+			}
+			
 		}
-		
+		void clean(){
+			for(x=0;x<10;x++){
+				for(y=0;y<10;y++)
+					matriz[x][y]='\0';
+			}
+		}
 		void sorrir(){
 			x=5;
 			while(x<6){
@@ -46,6 +60,9 @@ class Smile{
 
 int main(){
 	Smile* can = new Smile();
+//	sleep(500);
+	can->clean();
 	can->sorrir(); 
 	can->update();
+	system("PAUSE");
 }
