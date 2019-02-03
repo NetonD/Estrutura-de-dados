@@ -1,6 +1,8 @@
 /* CREATE BY ALMIR NETO
  * CONTACT ALMIR.NETO03@HOTMAIL.COM
  * I'D BE GREATEFUL IF YOU LEFT A STAR *-*
+ * Feito para ajudar colegas com muita 
+ * dificulade em entender estrutura de dados
  */
 #include <iostream>
 
